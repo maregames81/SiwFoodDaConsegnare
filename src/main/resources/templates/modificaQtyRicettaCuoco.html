@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Modifica gli ingredienti</title>
+<link rel="stylesheet" href="/css/modificaQtyRicetta.css">
+</head>
+<body>
+<form th:action="@{/modificaQtyRicetta}" method="post">
+
+		<span th:text="${qty.ingrediente.nome}"></span> <span
+			th:text="${qty.quantita}"></span> 
+			<label>Inserire nuova quantità:</label> <input type="number" name="nuovaQuantita">
+
+			<input type="hidden" name="ricettaId" th:value="${ricetta.id}" />
+			<input type="hidden" name="qtyId" th:value="${qty.id}" />
+			
+		<button type="submit">Conferma</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cuochi</title>
+<link rel="stylesheet" href="/css/cuochi.css">
+</head>
+<body>
+
+
+<header>
+        <div class="container">
+            <h1 class="logo">SiwFood</h1>
+            <nav>
+                <u2 class="nav-list">
+                    <a href="/">Home</a>
+                    <a href="/ricette">Ricette</a>
+                    <a href="/cuochi">Cuochi</a>
+                    <a href="/login">Profilo</a>
+                    
+                </u2>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+	<div class="title">
+		<h1 class="titolo">Cuochi</h1>
+	</div>
+	
+	<div class="title-ricette" th:if="${cuochi.isEmpty()}">
+			<h1 class="titolo-ricette" th:if="${cuochi.isEmpty()}">Non ci sono cuochi</h1>
+		</div>
+	<ul>
+		<div class="ricettas" th:each="cuoco : ${cuochi}">
+		<a th:href="@{'/cuochi' + '/' + ${cuoco.id}}"><img th:src="*{'data:image/jpeg;base64,'+{cuoco.immagine}}"></a>
+			<a class="nome" th:href="@{'/cuochi' + '/' + ${cuoco.id}}"
+				th:text="${cuoco.nome} + ' (' + ${cuoco.cognome} + ')'"></a>
+		</div>
+
+
+
+		
+	</ul>
+</body>
+</html>

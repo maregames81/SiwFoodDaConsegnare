@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/profilo.css">
+</head>
+<body>
+
+	<header>
+		<h3>In questo momento sei loggato con un profilo Admin</h3>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span> <a href="/logout">Logout</a> <a href="/">Home</a>
+		</div>
+	</header>
+</body>
+</html>

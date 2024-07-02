@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Elimina la ricetta</title>
+<link rel="stylesheet" href="/css/ricettas.css">
+</head>
+<body>
+<h3>Sei sicuro di voler eliminare questa Ricetta?</h3>
+
+	<div class="container">
+		<div class="recipe-img">
+			<img th:src="*{'data:image/jpeg;base64,'+{ricetta.foto}}"
+				alt="Foto della Ricetta">
+		</div>
+
+		<div class="recipe-information">
+			<h1
+				th:text="${ricetta.cuoco.nome} + ' (' + ${ricetta.cuoco.cognome} + ')'">Nome
+			</h1>
+
+			<div class="recipe-step">
+				<h2>Ingredienti</h2>
+				<ul class="ingredients">
+					<li th:each="qty : ${ingredienti}"><span
+						th:text="${qty.ingrediente.nome} +' (' + ${qty.quantita} + 'gr)'">Ingrediente</span></li>
+				</ul>
+			</div>
+
+			<hr>
+
+			<div class="recipe-step">
+				<h2>Instruzione</h2>
+
+				<div class="istructions">
+					<div class="item">
+						<span th:text="${ricetta.descrizione}"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div class="form-container">
+	<form th:action="@{/eliminaRicettaCuoco}" method="post">
+		<input type="hidden" name="ricettaId" th:value="${ricetta.id}" />
+		<button type="submit" class="button delete">Elimina Ricetta</button>
+	</form>
+
+	<!-- Form per annullare l'operazione -->
+	<form th:action="@{/annullaCancellazioneRicettaCuoco}" method="post">
+		<button type="submit" class="button cancel">Annulla</button>
+	</form>
+	
+	</div>
+</body>
+</html>

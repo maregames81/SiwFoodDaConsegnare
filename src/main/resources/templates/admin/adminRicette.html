@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ricette</title>
+<link rel="stylesheet" href="/css/modificaRicette.css">
+</head>
+<body>
+
+<header>
+        <div class="container">
+            <h1 class="logo">SiwFood</h1>
+            <nav>
+                <u2 class="nav-list">
+                
+                	<span th:if="${userDetails}">
+					<span th:text="${userDetails.username}"></span>
+					<a href="/logout">Logout</a>
+					</span>
+					
+                    <a href="/">Home</a>
+                    <a href="/ricette">Ricette</a>
+                    <a href="/cuochi">Cuochi</a>
+                    <a href="/login">Profilo</a>
+                    
+                </u2>
+            </nav>
+        </div>
+    </header>
+
+
+
+	<div class="aggiungiRicetta">
+		<a th:href="@{/admin/newRicetta}">Aggiungi una nuova Ricetta</a>
+	</div>
+	<div class="title">
+		<h1 class="titolo">Ricette</h1>
+	</div>
+	
+	<div class="title-ricette" th:if="${ricette.isEmpty()}">
+			<h1 class="titolo-ricette" th:if="${ricette.isEmpty()}">Non ci sono ricette da modificare</h1>
+		</div>
+	<ul>
+		<div class="ricetta" th:each="ricetta : ${ricette}">
+			<a href="@{'/admin/ricette' + '/' + ${ricetta.id}}"><img
+				th:src="*{'data:image/jpeg;base64,'+{ricetta.foto}}"></a>
+
+			<div class="nome">
+				<a th:href="@{'/admin/ricette' + '/' + ${ricetta.id}}"
+					th:text="${ricetta.nome}"></a>
+
+			</div>
+			<div class="admin">
+				<a th:href="@{'/admin/modificaRicetta' + '/' + ${ricetta.id}}">Modifica</a>
+				<a th:href="@{'/admin/eliminaRicetta' + '/' + ${ricetta.id}}">Elimina</a>
+			</div>
+		</div>
+
+	</ul>
+
+
+
+</body>
+</html>

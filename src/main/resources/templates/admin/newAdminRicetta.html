@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>New Ricetta</title>
+<link rel="stylesheet" href="/css/newRicetta.css">
+</head>
+<body>
+
+
+
+	<header>
+		<div class="container">
+			<h1 class="logo">SiwFood</h1>
+			<nav>
+				<ul class="nav-list">
+					<a href="/">Home</a>
+					<a href="/ricette">Ricette</a>
+					<a href="/cuochi">Cuochi</a>
+					<a href="/login">Profilo</a>
+					<a href="/newRicetta">Nuova Ricetta</a>
+
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+
+	<div class="contieni-form">
+		<div class="form">
+			<form th:action="@{/admin/newAdminRicetta}" method="post"
+				enctype="multipart/form-data">
+				<div>
+					<label for="Nome">Nome</label> <input name="nome" type="text"
+						placeholder="Nome" required th:field="${ricetta.nome}">
+				</div>
+				<div>
+					<label for="Descrizione">Descrizione</label>
+					<textarea name="descrizione" id=""
+						th:field="${ricetta.descrizione}"></textarea>
+				</div>
+				<div>
+
+					<span>Importa una foto della ricetta:</span> <input type="file"
+						id="imageFile" name="imageFile"> </span>
+
+				</div>
+
+				<label for="Cuoco">Selezionare il cuoco:</label> <select
+					name="IdCuoco" id="">
+					<option th:each="cuoco: ${cuochi}" th:value="${cuoco.id}"
+						th:text="${cuoco.nome}"></option>
+				</select>
+
+				<button type="submit">Conferma</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

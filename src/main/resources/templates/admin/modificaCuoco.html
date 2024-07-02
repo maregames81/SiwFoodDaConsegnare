@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Modifica Cuoco</title>
+<link rel="stylesheet" href="/css/modificaCuoco.css">
+</head>
+<body>
+
+
+<div class="cuoco-img">
+		<img th:src="*{'data:image/jpeg;base64,'+{cuoco.immagine}}"
+			alt="">
+			<h1 th:text="${cuoco.nome}"></h1>
+			<h1 th:text="${cuoco.cognome}"></h1>
+			<strong>Data di Nascita:</strong> <span th:text="${cuoco.nascita}"></span>
+	</div>
+	
+	
+	<form th:action="@{/admin/modificaCuoco}" method="post"	enctype="multipart/form-data">
+		
+		<input type="text" name="" placeholder="${cuoco.nome}" value="${cuoco.nome}" th:field="${cuoco.nome}">
+		<input type="text" name="" placeholder="${cuoco.cognome}" value="${cuoco.cognome}" th:field="${cuoco.cognome}">
+		<input type="file" name="imageFile" value="${cuoco.immagine}" > 
+		<input type="date" name="" required th:value="${cuoco.nascita}" th:field="${cuoco.nascita}"> 
+		
+		<span><button type="submit">Conferma</button></span>
+				
+				<input type="hidden" name="cuocoId" th:value="${cuoco.id}" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,169 @@
+@charset "ISO-8859-1";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    
+}
+
+header{
+    height: 60px;
+    width: 100%;
+    background: #222121;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+nav ul a{
+    list-style: none;
+    display: inline;
+    margin-left: 20px;
+    font-weight: 550;
+    color: white;
+}
+
+.logo{
+    font-size:  24px;
+
+}
+
+
+
+
+.hero{
+    width: 100%;
+    height: auto;
+    background: url("/images/ricetteCuoco.jpg");
+    background-repeat: no-repeat;
+    background-size: cover ;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 140px 0;
+}
+
+.hero p{
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-shadow: 
+                -1px -1px 0 black,  
+                 1px -1px 0 black,
+                -1px  1px 0 black,
+                 1px  1px 0 black; /* Crea un'ombra intorno al testo */
+}
+
+.hero h2{
+	text-shadow: 
+                -1px -1px 0 black,  
+                 1px -1px 0 black,
+                -1px  1px 0 black,
+                 1px  1px 0 black; /* Crea un'ombra intorno al testo */
+}
+
+.search-box{
+    max-width: 550px;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.search-box input{
+    width: 70%;
+    padding: 10px;
+    outline: none;
+    border: 0;
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+    border: 1px solid rgb(245,37, 9);
+}
+
+.search-box button{
+    
+    padding: 10px 20px;
+    outline: none;
+    border: 0;
+    border-radius: 0px 5px 5px 0px;
+    font-size: 1rem;
+    background: rgb(245,37, 9);
+    color: #fff;
+    cursor: pointer;
+}
+
+.contieni-link{
+	background: url("/images/pastaIndex.jpg");
+	background-repeat: no-repeat;
+    background-size: cover ;
+    background-position: center;
+    height: 100%;
+}
+
+.link-cuoco {
+    display: flex;
+    height:45vh;
+    justify-content: space-around;
+    background: url("/images/pastaIndex.jpg");
+	background-repeat: no-repeat;
+    background-size: cover ;
+    background-position: center;
+}
+
+.cuoco-link {
+	height:200px;
+	margin: 75px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.cuoco-link:hover {
+    transform: scale(1.05);
+}
+
+.cuoco-link img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.cuoco-link a {
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+    margin-top: 10px;
+    transition: color 0.2s;
+}
+
+.cuoco-link a:hover {
+    color: #007bff;
+}
+
+.link-admin{
+	display: grid;
+    grid-template-columns: repeat(3,1fr);
+}

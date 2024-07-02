@@ -1,0 +1,67 @@
+@charset "ISO-8859-1";
+
+.containers {
+	width: 80%;
+	margin: auto;
+}
+
+.ricetta-img {
+	width: 100%;
+	max-width: 500px;
+}
+
+.ingredienti-list {
+	list-style-type: none;
+	padding: 0;
+	display:flex;
+	aling-items:flex-start;
+}
+
+.ingredienti-list li {
+	margin: 5px 0;
+}
+
+nav ul a{
+    list-style: none;
+    display: inline;
+    margin-left: 20px;
+    font-weight: 550;
+    color: white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background: #f8f8f8;
+}
+
+header{
+    height: 60px;
+    width: 100%;
+    background: #222121;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+}
+
+.logo{
+    font-size:  24px;
+
+}

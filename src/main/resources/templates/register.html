@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registrati</title>
+<link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+
+	<div class="riquadro">
+		<form th:action="@{/register}" method="POST" enctype="multipart/form-data">
+			<h1>Registrati</h1>
+			<div class="input-box">
+				<input name="nome" type="text" placeholder="Nome" required
+					th:field="${user.nome}"> <span
+					th:if="${#fields.hasErrors('user.nome')}" th:errors="${user.nome}"
+					th:style="'color:red'"> </span>
+			</div>
+			<div class="input-box">
+				<input name="cognome" type="text" placeholder="Cognome" required
+					th:field="${user.cognome}"> <span
+					th:if="${#fields.hasErrors('user.cognome')}"
+					th:errors="${user.cognome}" th:style="'color:red'"></span>
+
+			</div>
+			<div class="input-box">
+				<input name="email" type="text" placeholder="Email" required
+					th:field="${user.email}"> <span
+					th:if="${#fields.hasErrors('user.email')}"
+					th:errors="${user.email}" th:style="'color:red'"></span>
+			</div>
+			<div class="input-box">
+				<input name="username" type="text" placeholder="Username" required
+					th:field="${credentials.username}"> <span
+					th:if="${#fields.hasErrors('credentials.username')}"
+					th:errors="${credentials.username}" th:style="'color:red'">
+				</span>
+			</div>
+			<div class="input-box">
+				<input name="password" type="password" placeholder="Password"
+					required th:field="${credentials.password}"> <span
+					th:if="${#fields.hasErrors('credentials.password')}"
+					th:errors="${credentials.password}" th:style="'color:red'">
+				</span>
+			</div>
+
+			<h2>
+				<span>Importa una tua foto:</span> <input type="file"
+					id="imageFile" name="imageFile" >
+					<span
+					th:if="${#fields.hasErrors('cuoco.immagine')}"
+					th:errors="${cuoco.immagine}" th:style="'color:red'">
+				</span>
+			</h2>
+
+			<h2>
+				<span>Inserisci data di nascita:</span> <input type="date"
+					name="nascita" required th:field="${cuoco.nascita}">
+					<span
+					th:if="${#fields.hasErrors('cuoco.nascita')}"
+					th:errors="${cuoco.nascita}" th:style="'color:red'">
+				</span>
+			</h2>
+			
+			
+
+
+			<button type="submit" class="bottone">Registrati</button>
+
+			<div class="link-register">
+				<p>
+					Se hai un account: <a href="/login">Accedi</a>
+				</p>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

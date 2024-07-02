@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cuoco</title>
+<link rel="stylesheet" href="/css/cuoco.css">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+			<h1 class="logo">SiwFood</h1>
+			<nav>
+				<u2 class="nav-list"> <a href="/">Home</a> <a href="/ricette">Ricette</a>
+				<a href="/cuochi">Cuochi</a> <a href="/login">Profilo</a> </u2>
+			</nav>
+		</div>
+	</header>
+
+
+	<div class="cuoco-container">
+		<div class="cuoco-img">
+			<img th:src="*{'data:image/jpeg;base64,'+{cuoco.immagine}}" alt="">
+		</div>
+		<div class="cuoco-info">
+			<span th:text="${cuoco.nome}"></span> <span
+				th:text="${cuoco.cognome}"></span>
+		</div>
+	</div>
+
+
+
+
+
+
+	<div class="zonaRicette">
+		<div class="title" th:if="${ricette.isEmpty()}">
+			<h1 class="titolo" th:if="${ricette.isEmpty()}">Non ci sono
+				ricette nel sistema di questo cuoco</h1>
+		</div>
+
+		<div class="ricetta" th:each="ricetta : ${ricette}">
+			<a th:href="@{'/ricette' + '/' + ${ricetta.id}}"><img
+				th:src="*{'data:image/jpeg;base64,'+{ricetta.foto}}"></a> <a
+				class="nomeRicetta" th:href="@{'/ricetta' + '/' + ${ricetta.id}}"
+				th:text="${ricetta.nome}"></a>
+		</div>
+
+	</div>
+</body>
+</html>

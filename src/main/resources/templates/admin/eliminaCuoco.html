@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Elimina Cuoco</title>
+<link rel="stylesheet" href="/css/ricettas.css">
+
+</head>
+<body>
+
+<h3>Sei sicuro di voler eliminare questo cuoco? Verranno cancellate anche le ricette create da questo cuoco</h3>
+
+<div class="cuoco-img">
+		<img th:src="*{'data:image/jpeg;base64,'+{cuoco.immagine}}"
+			alt="">
+			<h1 th:text="${cuoco.nome}+'  '+${cuoco.cognome}"></h1>
+			<strong>Data di Nascita:</strong> <span th:text="${cuoco.nascita}"></span>
+	</div>
+	
+	
+	
+<div class="form-container">
+	<form th:action="@{/admin/eliminaCuoco}" method="post">
+        <input type="hidden" name="cuocoId" th:value="${cuoco.id}" />
+        <button type="submit" class="button delete">Elimina Cuoco</button>
+    </form>
+    
+    <!-- Form per annullare l'operazione -->
+    <form th:action="@{/admin/annullaCancellazioneCuoco}" method="post">
+        <button type="submit" class="button cancel">Annulla</button>
+    </form>
+</div>    
+</body>
+</html>

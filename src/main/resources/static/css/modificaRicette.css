@@ -1,0 +1,163 @@
+@charset "ISO-8859-1";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: url("/images/modificaQtyRicetta.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+header{
+    height: 60px;
+    width: 100%;
+    background: #222121;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+nav u2 a{
+    list-style: none;
+    display: inline;
+    margin-left: 20px;
+    font-weight: 550;
+    color: white;
+}
+
+
+
+.aggiungiRicetta {
+    margin-top: 40px; 
+    margin-bottom: 20px;
+}
+
+.aggiungiRicetta a {
+    text-decoration: none;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.aggiungiRicetta a:hover {
+    background-color: #2980b9;
+}
+
+
+
+.title {
+    align-items: center;
+    justify-content: center;
+}
+
+.titolo {
+    font-size: 36px;
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+    padding: 10px;
+    background: linear-gradient(135deg, #f9f9f9 0%, #e9e9e9 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   
+}
+
+
+.title-ricette {
+    align-items: center;
+    justify-content: center;
+}
+
+.titolo-ricette {
+    font-size: 36px;
+    color: red;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+    padding: 10px;
+    background: linear-gradient(135deg, #f9f9f9 0%, #e9e9e9 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.ricetta {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.ricetta img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.nome a {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.nome a:hover {
+    color: #3498db;
+}
+
+.admin a {
+    text-decoration: none;
+    color: white;
+    background-color: #e74c3c;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.admin a:hover {
+    background-color: #c0392b;
+}

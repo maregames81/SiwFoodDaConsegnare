@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ricetta</title>
+<link rel="stylesheet" href="/css/ricettas.css">
+</head>
+<body>
+
+	<header>
+		<div class="containers">
+			<h1 class="logo">SiwFood</h1>
+			<nav>
+				<ul class="nav-list">
+					<a href="/">Home</a>
+					<a href="/ricette">Ricette</a>
+					<a href="/cuochi">Cuochi</a>
+					<a href="/login">Profilo</a>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	
+	
+	<div class="container">
+    <div class="recipe-img">
+        <img th:src="*{'data:image/jpeg;base64,'+{ricetta.foto}}"
+			alt="Foto della Ricetta">
+    </div>
+
+    <div class="recipe-information">
+        <h1 th:text="${ricetta.nome} +' ('+ ${ricetta.cuoco.nome} +' '+ ${ricetta.cuoco.cognome} + ')'">Nome </h1>
+
+        <div class="recipe-step">
+            <h2>Ingredienti</h2>
+            <ul class="ingredients">
+                <li th:each="qty : ${ingredienti}" ><span th:text="${qty.ingrediente.nome} +' (' + ${qty.quantita} + 'gr)'">Ingrediente</span></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="recipe-step">
+            <h2>Instruzione</h2>
+
+            <div class="istructions">
+                <div class="item">
+                    <span th:text="${ricetta.descrizione}"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+	
+
+
+
+
+
+</body>
+</html>

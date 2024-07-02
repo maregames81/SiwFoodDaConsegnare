@@ -1,0 +1,150 @@
+@charset "ISO-8859-1";
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("/images/sfondoCuochi.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+header{
+    height: 60px;
+    width: 100%;
+    background: #222121;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+nav u2 a{
+    list-style: none;
+    display: inline;
+    margin-left: 20px;
+    font-weight: 550;
+    color: white;
+}
+
+
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: aqua;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+.title {
+    align-items: center;
+    justify-content: center;
+}
+
+.titolo {
+    font-size: 36px;
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+    padding: 10px;
+    background: linear-gradient(135deg, #f9f9f9 0%, #e9e9e9 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   
+}
+
+
+.title-ricette {
+    align-items: center;
+    justify-content: center;
+}
+
+.titolo-ricette {
+    font-size: 36px;
+    color: red;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+    padding: 10px;
+    background: linear-gradient(135deg, #f9f9f9 0%, #e9e9e9 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   
+}
+
+
+
+.cuochi-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    
+}
+
+.cuoco-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cuoco-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+
+.cuoco-info {
+    text-align: center;
+}
+
+.cuoco-info h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.cuoco-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cuoco-buttons .button {
+    margin: 0;
+}
